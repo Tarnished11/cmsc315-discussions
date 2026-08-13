@@ -55,6 +55,13 @@ class Dog(Animal):
         self.name = name
         self.age = age
 
+    def set_age(self, age):
+        self.age = age
+
+    def display_info(self):
+        animal_info = super().display_info()
+        print(f"{animal_info}, Name: {self.name}, Age: {self.age}")
+
 
 
 # TODO 3:
@@ -71,6 +78,16 @@ class Dog(Animal):
 def demonstrate_namespaces():
     print("\n=== Namespace Demonstration ===")
     print("TODO: Implement namespace demonstration")
+    dog1 = Dog("land", "meat", "Sparky", 8)
+    dog2 = Dog("land", "meat", "Rex", 5)
+    Dog.sound = "Bark"
+    dog1.sound = "Ruff"
+    dog1.fur = "long"
+    print(dog1.__dict__)
+    print(dog2.__dict__)
+    dog1.display_info()
+    dog2.display_info()
+
 
 
 # TODO 4:
@@ -87,6 +104,24 @@ def demonstrate_namespaces():
 def demonstrate_copying():
     print("\n=== Copy Demonstration ===")
     print("TODO: Implement shallow copy and deep copy demonstration")
+
+    coordinates = [
+        [1, 2],
+        [3, 4]
+    ]
+
+    shallow_copy = copy.copy(coordinates)
+    deep_copy = copy.deepcopy(coordinates)
+
+    coordinates[0].append(99)
+
+    # The shallow copy is just a pointer reference to the same original list.
+    # With a shallow copy, changing the original also changes the copy, because they're the same.
+    # The deep copy makes a entirely separate list that can be changed without changing the original.
+    print(f"Original: {coordinates}")
+    print(f"Shallow copy: {shallow_copy}")
+    print(f"Deep copy: {deep_copy}")
+
 
 
 # TODO 5:

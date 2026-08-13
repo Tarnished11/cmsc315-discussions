@@ -24,8 +24,15 @@ from copy import copy, deepcopy
 #
 # Replace the pass statement with your implementation.
 
-class ParentClass:
-    pass
+class Animal:
+    color = "Brown"
+
+    def __init__(self, habitat, food):
+        self.habitat = habitat
+        self.food = food
+
+    def display_info(self):
+        print(f"Habitat: {self.habitat}, Food: {self.food}")
 
 
 # TODO 2:
@@ -40,8 +47,14 @@ class ParentClass:
 #
 # Replace the pass statement with your implementation.
 
-class ChildClass(ParentClass):
-    pass
+class Dog(Animal):
+    sound = "Woof"
+
+    def __init__(self, habitat, food, name, age):
+        super().__init__(self, habitat, food)
+        self.name = name
+        self.age = age
+
 
 
 # TODO 3:

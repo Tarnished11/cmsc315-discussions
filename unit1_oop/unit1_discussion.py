@@ -51,7 +51,7 @@ class Dog(Animal):
     sound = "Woof"
 
     def __init__(self, habitat, food, name, age):
-        super().__init__(self, habitat, food)
+        super().__init__(habitat, food)
         self.name = name
         self.age = age
 
@@ -110,8 +110,8 @@ def demonstrate_copying():
         [3, 4]
     ]
 
-    shallow_copy = copy.copy(coordinates)
-    deep_copy = copy.deepcopy(coordinates)
+    shallow_copy = copy(coordinates)
+    deep_copy = deepcopy(coordinates)
 
     coordinates[0].append(99)
 

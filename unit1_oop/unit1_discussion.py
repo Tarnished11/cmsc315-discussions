@@ -25,6 +25,8 @@ from copy import copy, deepcopy
 # Replace the pass statement with your implementation.
 
 class Animal:
+
+    # Variable for all Animal objects
     color = "Brown"
 
     def __init__(self, habitat, food):
@@ -32,7 +34,7 @@ class Animal:
         self.food = food
 
     def display_info(self):
-        print(f"Habitat: {self.habitat}, Food: {self.food}")
+        print(f"Color: {self.color}, Habitat: {self.habitat}, Food: {self.food}")
 
 
 # TODO 2:
@@ -48,19 +50,24 @@ class Animal:
 # Replace the pass statement with your implementation.
 
 class Dog(Animal):
+
+    # Variable for all Dog objects
     sound = "Woof"
 
-    def __init__(self, habitat, food, name, age):
+    def __init__(self, habitat, food, name, age, color="Brown"):
         super().__init__(habitat, food)
         self.name = name
         self.age = age
 
+    # New method that is not in the parent class
     def set_age(self, age):
         self.age = age
 
+    # Overridden method from the parent class
     def display_info(self):
-        animal_info = super().display_info()
-        print(f"{animal_info}, Name: {self.name}, Age: {self.age}")
+
+        print(f"Color: {self.color}, Habitat: {self.habitat}, Food: {self.food}, "
+              f"Name: {self.name}, Age: {self.age}, Sound: {self.sound}")
 
 
 
@@ -78,15 +85,21 @@ class Dog(Animal):
 def demonstrate_namespaces():
     print("\n=== Namespace Demonstration ===")
     print("TODO: Implement namespace demonstration")
-    dog1 = Dog("land", "meat", "Sparky", 8)
-    dog2 = Dog("land", "meat", "Rex", 5)
+
+    dog1 = Dog(habitat="land", food="meat", name="Sparky", age=8)
+    dog2 = Dog(habitat="land", food="meat", name="Rex", age=5)
+
     Dog.sound = "Bark"
+    dog1.display_info()
+
     dog1.sound = "Ruff"
+    dog1.display_info()
+
     dog1.fur = "long"
+
     print(dog1.__dict__)
     print(dog2.__dict__)
-    dog1.display_info()
-    dog2.display_info()
+    print(Dog.__dict__)
 
 
 
@@ -115,9 +128,9 @@ def demonstrate_copying():
 
     coordinates[0].append(99)
 
-    # The shallow copy is just a pointer reference to the same original list.
+    # The shallow copy is just copy of the outer list, not the inner one.
     # With a shallow copy, changing the original also changes the copy, because they're the same.
-    # The deep copy makes a entirely separate list that can be changed without changing the original.
+    # The deep copy makes an entirely separate list that can be changed without changing the original.
     print(f"Original: {coordinates}")
     print(f"Shallow copy: {shallow_copy}")
     print(f"Deep copy: {deep_copy}")
@@ -139,7 +152,13 @@ def main():
 
     print("\nTODO: Create and test your parent object")
 
+    a = Animal(habitat="ocean", food="algae")
+    a.display_info()
     print("\nTODO: Create and test your child object")
+    dog3 = Dog(habitat="land", food="meat", name="Brian", age=3)
+    dog3.display_info()
+    dog3.set_age(1)
+    dog3.display_info()
 
     demonstrate_namespaces()
     demonstrate_copying()

@@ -23,6 +23,38 @@ Complete all TODO sections in the source code:
 5. Create and test objects in `main()`.
 6. Add a student-created extension.
 
+# Implementation Documentation
+
+## Overview
+This program demonstrates object-oriented programming concepts in Python using an `Animal` parent class and a `Dog` child class. It also explores namespaces and the differences between shallow and deep copying.
+
+## Classes
+
+### Animal
+The `Animal` class contains shared animal information, including:
+- Class variable: `color`
+- Instance variables: `habitat` and `food`
+- Method: `display_info()`
+
+### Dog
+The `Dog` class inherits from `Animal` and adds:
+- Class variable: `sound`
+- Instance variables: `name` and `age`
+- Method: `set_age()`
+- Overridden `display_info()` method
+
+## Namespace Demonstration
+The `demonstrate_namespaces()` function creates multiple `Dog` objects, accesses class and instance variables, adds a new attribute to one object, and displays object and class namespaces using `__dict__`.
+
+## Copy Demonstration
+The `demonstrate_copying()` function demonstrates:
+- Shallow copying using `copy()`
+- Deep copying using `deepcopy()`
+- The effect of modifying nested mutable data after copying
+
+## Execution
+The `main()` function creates `Animal` and `Dog` objects, demonstrates inheritance, and runs the namespace and copy demonstrations.
+
 ## Discussion Board Reflection
 
 After completing the programming assignment, add this reflection to your initial discussion post in LEO.
@@ -37,7 +69,7 @@ Before this assignment, I had only done basic OOP in Java.
 
 2. What challenges did you encounter, and how did you overcome them?
 
-One challenge I ran into was understanding how inheritance works in regard to using 'self', especially when overriding methods and using the `super()` function.
+One challenge I ran into was understanding how inheritance works in regard to using `self`, especially when overriding methods and using the `super()` function.
 I also had to think about how I was changing the 2D list between the shallow copy and deep copy.
 After testing examples with nested lists and looking at the results, I was able to understand how each type of copy behaves.
 

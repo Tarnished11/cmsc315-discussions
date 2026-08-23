@@ -32,7 +32,7 @@ class Stack:
         # What should happen if the stack is empty?
         # If the stack is empty, pop() returns None, or can be replaced with a message later.
         # Important note here is that items.pop() is calling the pop() method for Python's list.
-        if self.items.is_empty():
+        if self.is_empty():
             return None
         return self.items.pop()
 

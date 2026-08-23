@@ -25,6 +25,46 @@ Complete all TODO sections:
 5. Create and test edge cases.
 6. Create a real-world scenario.
 
+## Implementation
+
+### Stack
+
+The `Stack` class uses a Python list as its internal data structure.
+
+Supported operations:
+- `push(value)` - Adds an item to the top of the stack.
+- `pop()` - Removes and returns the most recently added item.
+- `peek()` - Returns the top item without removing it.
+- `is_empty()` - Returns `True` if the stack contains no items.
+
+### Queue
+
+The `Queue` class uses `collections.deque` for efficient queue operations.
+
+Supported operations:
+- `enqueue(value)` - Adds an item to the back of the queue.
+- `dequeue()` - Removes and returns the item at the front of the queue.
+- `front()` - Returns the front item without removing it.
+- `is_empty()` - Returns `True` if the queue contains no items.
+
+## Testing Performed
+
+### Stack Tests
+
+- Added multiple items and verified LIFO behavior.
+- Confirmed that `peek()` displays the current top item.
+- Tested `pop()` on an empty stack.
+- Tested `peek()` on an empty stack.
+- Verified that a single-item stack becomes empty after removal.
+
+### Queue Tests
+
+- Added multiple items and verified FIFO behavior.
+- Confirmed that `front()` displays the first item added.
+- Tested `dequeue()` on an empty queue.
+- Tested `front()` on an empty queue.
+- Verified that a single-item queue becomes empty after removal.
+
 ## Discussion Board Reflection
 
 After completing the programming assignment, add this reflection to your initial discussion post in LEO.

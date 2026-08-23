@@ -106,7 +106,7 @@ def main():
     stack.push("C")
     stack.push("D")
     # 3. Improve the print statements so they clearly explain what is happening.
-    print("The items added, in order, were: A, B, C, D")
+    print("The items added to the stack, in order, were: A, B, C, D")
     print(f"The last item added and the top of the stack is: {stack.peek()}")
     # 4. Demonstrate LIFO behavior.
     print("Removing top item...")
@@ -127,26 +127,45 @@ def main():
     print(f"Removing top item: {oneItemStack.pop()}")
     print(f"Stack contents are now: {oneItemStack.peek()}")
 
-# ===============================
-# TODO (Student): QUEUE DEMO
-# ===============================
-# Requirements:
-# 1. Create a Queue object.
-# 2. Add at least 4 values to the queue.
-# 3. Improve the print statements so they clearly explain what is happening.
-# 4. Demonstrate FIFO behavior.
-# 5. Show what happens when dequeue() is used on an empty queue.
-#
-# Edge Cases:
-# 6. Show what happens when front() is used on an empty queue.
-# 7. Create a queue with only one item, remove it,
-#    and verify the queue is empty afterward.
+    print("\n=== QUEUE DEMO ===")
+    print("TODO: Create a Queue object, demonstrate FIFO behavior,")
+    print("      test dequeuing from an empty queue,")
+    print("      test viewing the front of an empty queue,")
+    print("      and verify a single-item queue becomes empty after removal.")
 
-print("\n=== QUEUE DEMO ===")
-print("TODO: Create a Queue object, demonstrate FIFO behavior,")
-print("      test dequeuing from an empty queue,")
-print("      test viewing the front of an empty queue,")
-print("      and verify a single-item queue becomes empty after removal.")
+    # ===============================
+    # TODO (Student): QUEUE DEMO
+    # ===============================
+    # Requirements:
+    # 1. Create a Queue object.
+    q = Queue()
+    # 2. Add at least 4 values to the queue.
+    q.enqueue("A")
+    q.enqueue("B")
+    q.enqueue("C")
+    q.enqueue("D")
+    # 3. Improve the print statements so they clearly explain what is happening.
+    print("Items added to the queue, in order, were: A, B, C, D")
+    print(f"The first item added and the front of the queue is: {q.front()}")
+    # 4. Demonstrate FIFO behavior.
+    print("Removing items starting with the front of the queue...")
+    print(q.dequeue())
+    print(q.dequeue())
+    print(q.dequeue())
+    print(q.dequeue())
+    # 5. Show what happens when dequeue() is used on an empty queue.
+    print(f"The queue is now empty and using dequeue returns: {q.dequeue()}")
+    #
+    # Edge Cases:
+    # 6. Show what happens when front() is used on an empty queue.
+    print(f"Using front on an empty queue returns: {q.front()}")
+    # 7. Create a queue with only one item, remove it,
+    #    and verify the queue is empty afterward.
+    newQ = Queue()
+    newQ.enqueue("A")
+    print(f"One item added to new queue: {newQ.front()}")
+    print(f"Removing front item: {newQ.dequeue()}")
+    print(f"Queue contents are now: {newQ.front()}")
 
 if __name__ == "__main__":
     main()

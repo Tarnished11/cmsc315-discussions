@@ -74,3 +74,17 @@ Your reflection should be approximately 150–200 words and address the followin
 1. What concepts or skills did you learn while completing this assignment?
 2. What challenges did you encounter, and how did you overcome them?
 3. Explain the differences between stacks and queues as this relates to real-world applications.
+
+While completing this assignment, I refreshed my knowledge on how stacks and queues work and how to implement them in Python. 
+I used a list to build a stack and the collections.deque to build a queue. 
+This effectively reinforced the lesson about the difference between Last-In, First-Out and First-In, First-Out behavior.
+
+One challenge I encountered was handling empty stacks and queues. 
+Methods such as pop() and dequeue() can cause problems if there are no items to remove. 
+I solved this by checking whether the data structure was empty before performing those operations and returning None when appropriate. 
+This can be replaced by a custom message later like "No undo tasks available".
+
+Stacks and queues have many real-world applications. 
+A stack is useful for features like an Undo button because the most recent action is reversed first. 
+A queue is useful for situations like customer support tickets or printer jobs, where requests are processed in the order they are received. 
+This assignment helped me understand why choosing the correct data structure is important when solving programming problems. Completing the implementation and testing the edge cases improved my knowledge in working with stacks, queues, and simple data structures in Python.

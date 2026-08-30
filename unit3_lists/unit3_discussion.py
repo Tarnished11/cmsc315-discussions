@@ -22,7 +22,11 @@ def insert_at(lst, index, value):
     - Use comments to explain how insertion performance may vary depending on
       where the insertion occurs.
     """
-    pass
+    # After insertion occurs, existing elements are shifted either left or right based on where the value was inserted.
+    # Python's built-in insert() method handles an index that doesn't exist on its own.
+    # Insertion performance is O(n) in the worst case because elements may need to be shifted.
+    # Inserting at the end requires no shifts, inserting at the beginning requires all elements to be shifted.
+    lst.insert(index, value)
 
 
 def delete_at(lst, index):
@@ -36,7 +40,12 @@ def delete_at(lst, index):
     - Return None if the index is invalid.
     - Add comments explaining why index validation and safe deletion are important.
     """
-    pass
+    # Index validation is important because it prevents an IndexError by pop().
+    # Safe deletion also prevents errors and ensures the intended index is deleted.
+    if 0 <= index < len(lst):
+        return lst.pop(index)
+    else:
+        return None
 
 
 def search_value(lst, value):
@@ -49,7 +58,12 @@ def search_value(lst, value):
     - Return -1 if the value is not found.
     - Add comments explaining why this is a linear search and why it scans sequentially.
     """
-    pass
+    # This is linear search because it checks each element one at a time from beginning to the value or end.
+    # It scans sequentially because no information is given about where the value may be.
+    for i in range(len(lst)):
+       if lst[i] == value:
+           return i
+    return -1
 
 
 def main():
@@ -72,6 +86,19 @@ def main():
     print("\n=== INSERTION TESTS ===")
     print("TODO: Create a list and demonstrate insertions.")
 
+    list = [1, 2, 3, 4, 5]
+    print(f"New list created: {list}")
+    print("Below, a value will be inserted at the beginning, middle, and end.")
+    insert_at(list, 0, 10)
+    print(list)
+    insert_at(list, 3, 11)
+    print(list)
+    insert_at(list, 7, 12)
+    print(list)
+    print("The insert_at() method simply uses Python's built-in insert() method.")
+    print("If an out-of-bounds index is used, then insert() uses the closest valid index.")
+    print("For example, if index 99 was used on the list above, the value would be inserted at the end.")
+
     # ===============================
     # TODO (Student): DELETION TESTS
     # ===============================
@@ -88,6 +115,14 @@ def main():
     print("\n=== DELETION TESTS ===")
     print("TODO: Demonstrate deletions from multiple positions.")
 
+    print(f"List at the start: {list}")
+    print(f"Deleting from the beginning: {delete_at(list, 0)}")
+    print(f"Updated list: {list}")
+    print(f"Deleting from the middle: {delete_at(list, len(list) // 2)}")
+    print(f"Updated list: {list}")
+    print(f"Deleting from the end: {delete_at(list, len(list) - 1)}")
+    print(f"Updated list: {list}")
+
     # ===============================
     # TODO (Student): SEARCH TESTS
     # ===============================
@@ -100,6 +135,12 @@ def main():
 
     print("\n=== SEARCH TESTS ===")
     print("TODO: Demonstrate searching for values.")
+
+    list = [1, 2, 3, 4, 5]
+    print(f"Resetting list to: {list}")
+    print(f"Searching for index of value 5: {search_value(list, 5)}")
+    print(f"Searching for index of value 20: {search_value(list, 20)}")
+    print("5 was found, but 20 was not. -1 means that the value was not found.")
 
     # ===============================
     # TODO (Student): EDGE CASES
@@ -116,8 +157,14 @@ def main():
 
     print("\n=== EDGE CASES ===")
     print("TODO: Demonstrate at least two edge cases.")
+    empty = []
 
-
+    print(f"List being used: {list}")
+    print(f"Attempting to delete index 8: {delete_at(list, 8)}")
+    print("None was returned because the index was invalid.")
+    print(f"Searching for value 5 in an empty list: {search_value(empty, 5)}")
+    print("-1 was returned because value does not exist.")
+    print("This can be built upon when used in another program to return a message, or do something else.")
 
 if __name__ == "__main__":
     main()

@@ -156,5 +156,18 @@ def main():
     print("Linear search for 1:", linear_search(new_list, 1))
     print("Binary search for 1:", binary_search(new_list, 1))
 
+    print("\n=== REAL-WORLD EXAMPLE ===")
+    # Real-world example:
+    # A company stores employee IDs in sorted order.
+    # Linear search checks each ID one at a time until the correct employee is found.
+    # Binary search quickly narrows down the possible IDs by repeatedly cutting the search space in half.
+    employee_ids = [1001, 1005, 1010, 1015, 1020, 1025, 1030]
+
+    print("Employee IDs:", employee_ids)
+
+    print("Linear search for ID 1020:", linear_search(employee_ids, 1020))
+
+    print("Binary search for ID 1020:", binary_search(employee_ids, 1020))
+
 if __name__ == "__main__":
     main()
